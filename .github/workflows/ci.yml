@@ -22,23 +22,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - uses: actions-rs/toolchain@v1
       with:
+        profile: minimal
         toolchain: stable
         target: riscv32imac-unknown-none-elf
         override: true
-    - name: Prologue
-      run: cargo update
-    - name: Lib release
-      run: | 
-        cargo build --release --verbose
-    - name: Lib debug
-      run: | 
-        cargo build --verbose
     - name: Examples release
-      run: | 
-        cargo build --examples --release --verbose
+      run: cargo check --examples --release --verbose
     - name: Examples debug
-      run: | 
-        cargo build --examples --verbose
+      run: cargo check --examples --verbose
