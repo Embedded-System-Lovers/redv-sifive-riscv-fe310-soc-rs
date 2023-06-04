@@ -1,5 +1,7 @@
 # redv-sifive-riscv-fe310-soc-rs
 
+[![ci](https://github.com/Embedded-System-Lovers/redv-sifive-riscv-fe310-soc-rs/actions//workflows/ci.yml/badge.svg)](https://github.com/Embedded-System-Lovers/redv-sifive-riscv-fe310-soc-rs/actions/workflows/ci.yml) 
+
 ## Installation (Unix-like OS)
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
