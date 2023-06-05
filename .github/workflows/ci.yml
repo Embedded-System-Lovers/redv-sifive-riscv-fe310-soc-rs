@@ -30,6 +30,6 @@ jobs:
         target: riscv32imac-unknown-none-elf
         override: true
     - name: Examples release
-      run: cargo check --examples --release --verbose
+      run: RUSTFLAGS="-C link-arg=-Tmemory.x -C link-arg=-Tlink.x" cargo build --examples --release --verbose
     - name: Examples debug
-      run: cargo check --examples --verbose
+      run: RUSTFLAGS="-C link-arg=-Tmemory.x -C link-arg=-Tlink.x" cargo build --examples --verbose
